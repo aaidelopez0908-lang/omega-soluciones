@@ -32,4 +32,29 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.servicio-card, .step, .stat-card').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(30px)';
-  el.style.transition = 'opacity 0.6s ease, transfo
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+
+// ===== SCROLL SUAVE =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// ===== NAVBAR SOMBRA AL SCROLL =====
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    if (window.scrollY > 50) {
+      navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+    } else {
+      navbar.style.boxShadow = 'none';
+    }
+  }
+});
