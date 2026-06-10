@@ -14,7 +14,7 @@
 body { font-family: 'Segoe UI', sans-serif; }
 
 /* ===== HEADER ===== */
-.header { position: sticky; top: 0; z-index: 100; background: var(--azul-oscuro); }
+.header { position: relative; background: var(--azul-oscuro); }
 
 .header-top {
   background: linear-gradient(90deg, #060f1e 0%, #0a1628 50%, #060f1e 100%);
