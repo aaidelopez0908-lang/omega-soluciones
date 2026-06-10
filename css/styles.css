@@ -40,12 +40,12 @@ body { font-family: 'Segoe UI', sans-serif; }
 .header-fb:hover { background: var(--verde); color: var(--blanco); }
 
 .navbar {
-  background: var(--azul-oscuro); padding: 0 60px; height: 115px;
+  background: var(--azul-oscuro); padding: 0 60px; height: 160px;
   display: flex; align-items: center; justify-content: space-between;
   border-bottom: 2px solid rgba(29,158,117,0.25);
 }
 
-.nav-logo img { display: block; height: 120px; filter: brightness(1.1) contrast(1.1); }
+.nav-logo img { display: block; height: 150px; filter: brightness(1.1) contrast(1.1); }
 
 .nav-links { list-style: none; display: flex; gap: 40px; }
 
@@ -204,6 +204,20 @@ body { font-family: 'Segoe UI', sans-serif; }
 }
 
 .siigo-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+
+.siigo-card img {
+  width: 100%; height: auto; max-height: none;
+  object-fit: contain; border-radius: 8px; margin-bottom: 14px;
+  background: #f0f4f8; padding: 12px; display: block;
+}
+
+.siigo-card-cta { position: relative; overflow: hidden; padding: 0; border: none; }
+
+.siigo-card-cta img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: block; padding: 0; background: none; border-radius: 0; max-height: none;
+}
+
 .siigo-icono { font-size: 36px; margin-bottom: 14px; }
 .siigo-card h4 { color: #1a2332; font-size: 18px; font-weight: 600; margin-bottom: 10px; }
 .siigo-card p { color: #6b7c93; font-size: 14px; line-height: 1.6; margin-bottom: 14px; }
@@ -211,8 +225,6 @@ body { font-family: 'Segoe UI', sans-serif; }
 .siigo-card ul li { color: #6b7c93; font-size: 13px; }
 .siigo-link { color: var(--verde); text-decoration: none; font-size: 14px; font-weight: 600; transition: color 0.3s; }
 .siigo-link:hover { color: var(--verde-oscuro); }
-.siigo-card-cta { position: relative; overflow: hidden; padding: 0; border: none; }
-.siigo-card-cta img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .siigo-cta-overlay {
   position: absolute; inset: 0; background: rgba(10,22,40,0.88);
@@ -348,7 +360,74 @@ body { font-family: 'Segoe UI', sans-serif; }
 
 /* ===== FOOTER ===== */
 .footer { background: #060f1e; padding: 32px 60px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-logo img { height: 70px; filter: brightness(1.1) contrast(1.1); }
 .footer-links { display: flex; gap: 24px; }
 .footer-links a { color: #3a4e66; text-decoration: none; font-size: 14px; transition: color 0.3s; }
 .footer-links a:hover { color: var(--verde); }
 .footer-copy { color: #3a4e66; font-size: 13px; }
+
+/* ===== RESPONSIVO MÓVIL ===== */
+@media (max-width: 768px) {
+
+  .header-top { padding: 10px 20px; }
+  .header-contacto { flex-wrap: wrap; gap: 8px; font-size: 13px; }
+  .header-contacto span { padding: 4px 10px; font-size: 12px; }
+  .header-fb { font-size: 12px; padding: 4px 12px; }
+
+  .navbar { padding: 0 20px; height: auto; min-height: 80px; flex-wrap: wrap; gap: 10px; justify-content: space-between; padding-top: 10px; padding-bottom: 10px; }
+  .nav-logo img { height: 70px; }
+  .nav-links { display: none; }
+  .nav-btn { font-size: 13px; padding: 10px 16px; }
+
+  .hero { grid-template-columns: 1fr; padding: 40px 20px; min-height: auto; gap: 30px; }
+  .hero-texto h1 { font-size: 28px; }
+  .hero-texto p { font-size: 15px; }
+  .hero-btns { flex-direction: column; }
+  .btn-primary, .btn-outline { text-align: center; padding: 12px 20px; }
+  .hero-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .stat-num { font-size: 28px; }
+
+  .servicios { padding: 40px 20px; }
+  .servicios-grid { grid-template-columns: 1fr; }
+  .seccion-header h2 { font-size: 26px; }
+
+  .servicios-destacados { padding: 40px 20px; }
+  .sdest-grid { grid-template-columns: 1fr; }
+  .sdest-card { height: 220px; }
+
+  .siigo { padding: 40px 20px; }
+  .siigo-hero { grid-template-columns: 1fr; gap: 24px; }
+  .siigo-hero-texto h2 { font-size: 26px; }
+  .siigo-grid { grid-template-columns: 1fr; }
+  .siigo-btns { flex-direction: column; }
+
+  .porque { padding: 40px 20px; }
+  .porque-grid { grid-template-columns: 1fr; }
+  .porque-img-grande { height: 280px; }
+  .porque-intro h2 { font-size: 26px; }
+
+  .proceso { padding: 40px 20px; }
+  .proceso-steps { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .seccion-header.claro h2 { font-size: 26px; }
+
+  .contacto { padding: 40px 20px; }
+  .contacto-grid { grid-template-columns: 1fr; gap: 32px; }
+  .contacto-info h2 { font-size: 24px; }
+  .form-row { grid-template-columns: 1fr; }
+  .contacto-form-wrap { padding: 24px; }
+
+  .mapa-seccion { padding: 40px 20px; }
+  .mapa-wrap { grid-template-columns: 1fr; }
+  .mapa-info h3 { font-size: 22px; }
+
+  .footer { padding: 24px 20px; flex-direction: column; align-items: center; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+}
+
+@media (max-width: 480px) {
+  .hero-texto h1 { font-size: 24px; }
+  .proceso-steps { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .stat-num { font-size: 24px; }
+  .stat-lbl { font-size: 12px; }
+}
